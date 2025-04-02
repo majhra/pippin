@@ -62,7 +62,7 @@ class ActivityLoader:
         logger.info(f"Starting to load activities from: {self.activities_path}")
         for activity_file in self.activities_path.glob("activity_*.py"):
             try:
-                logger.info(f"Found activity file: {activity_file}")
+                logger.debug(f"Found activity file: {activity_file}")
                 file_text = activity_file.read_text()
 
                 # We expect a pattern like: class SomeActivity(ActivityBase):
@@ -98,7 +98,7 @@ class ActivityLoader:
 
                     activity_class = getattr(module, class_name)
                     self.loaded_activities[module_name] = activity_class
-                    logger.info(
+                    logger.debug(
                         f"Successfully loaded activity {module_name} -> class {class_name}"
                     )
 

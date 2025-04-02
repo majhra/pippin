@@ -51,7 +51,7 @@ class ActivitySelector:
         available_activities = self._get_available_activities()
         if not available_activities:
             next_available = self.get_next_available_times()
-            logger.info(
+            logger.debug(
                 f"No activities available at this time. Next available activities: {next_available}"
             )
             return None

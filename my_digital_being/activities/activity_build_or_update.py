@@ -74,6 +74,7 @@ class BuildOrUpdateActivity(ActivityBase):
             "- We do not store the skill or memory object in `shared_data` as a permanent reference. It's optional if you want.\n\n"
             "# 5) Common pitfalls\n"
             "- DO NOT reference unknown modules or placeholders like 'some_module'.\n"
+            "- DO NOT prefix with 'Here is the Python file ...'. Return only the valid python.\n"
             "- DO NOT rely on fallback calls to uninitialized XAPISkill, if you do not intend them.\n"
             "- If a dynamic skill name differs from your listing (like 'composio_twitter_twitter_tweet_create'), we might need EXACT naming.\n\n"
             "# 6) Example of minimal code snippet\n"

@@ -30,7 +30,7 @@ class DrawActivity(ActivityBase):
             image_skill = ImageGenerationSkill(
                 {
                     "enabled": True,
-                    "max_generations_per_day": 50,
+                    "max_generations_per_day": 10,
                     "supported_formats": ["png", "jpg"],
                 }
             )

@@ -34,7 +34,7 @@ class APIManager:
         if not skill_name or not required_keys:
             return False
         self._required_keys[skill_name] = set(required_keys)
-        logger.info(f"Registered keys for skill {skill_name}: {required_keys}")
+        logger.debug(f"Registered keys for skill {skill_name}: {required_keys}")
         return True
 
     def get_required_keys(

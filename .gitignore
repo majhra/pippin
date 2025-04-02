@@ -4,6 +4,7 @@ my_digital_being/config/
 
 # Environment variables
 .env
+notes.txt
 
 # Python
 __pycache__/
