@@ -106,13 +106,20 @@ class ChatSkill:
             content = choices[0].get("message", {}).get("content", "")
             finish_reason = choices[0].get("finish_reason", "")
             used_model = response.get("model", self.model_name)
-
+            
+            # Add cost and usage information
+            usage = response.get("usage", {})
+            completion_cost = response.get("cost", 0)  # LiteLLM provides cost in USD
+            logger.info(f"LiteLLM completion cost: ${completion_cost:.2f}")
+            
             return {
                 "success": True,
                 "data": {
                     "content": content,
                     "finish_reason": finish_reason,
                     "model": used_model,
+                    "usage": usage,
+                    "cost": completion_cost
                 },
                 "error": None,
             }
